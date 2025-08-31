@@ -1,8 +1,8 @@
-import { Header } from "@/components/header"
-import { ZenPointsCard } from "@/components/zen-points-card"
-import { AvatarGrid } from "@/components/avatar-grid"
-import { AppSection } from "@/components/app-section"
-import { BottomNavigation } from "@/components/bottom-navigation"
+import { Header } from "@/components/layout/Header"
+import { BottomNavigation } from "@/components/layout/BottomNavigation"
+import { AppSection } from "@/components/sections/AppSection"
+import { AvatarGrid } from "@/components/sections/AvatarGrid"
+import { ZenPointsCard } from "@/components/sections/ZenPointsCard"
 
 export default function HomePage() {
   return (

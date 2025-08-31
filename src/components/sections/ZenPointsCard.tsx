@@ -2,7 +2,7 @@
 
 import type React from "react"
 
-import { Card } from "@/components/ui/card"
+import { Card } from "@/components/ui/Card"
 import { useState, useEffect } from "react"
 
 const carouselData = [
