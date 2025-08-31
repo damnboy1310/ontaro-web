@@ -1,46 +1,89 @@
-import { Card } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
+import { Card, CardContent } from "@/components/ui/card"
 
 interface AppSectionItem {
   id: number
-  title: string
-  subtitle: string
   image: string
-  price: string
+  title: string
+  category?: string
+  emoji?: string
+  originalPrice?: string
+  discount?: string
+  finalPrice: string
 }
 
 interface AppSectionProps {
   title: string
   items: AppSectionItem[]
-  buttonText: string
-  buttonColor: string
+  moreText?: string
 }
 
-export function AppSection({ title, items, buttonText, buttonColor }: AppSectionProps) {
+export function AppSection({ title, items, moreText = "더보기" }: AppSectionProps) {
   return (
-    <div className="space-y-4">
-      <h2 className="text-lg font-semibold text-gray-900">{title}</h2>
-
-      <div className="space-y-3">
-        {items.map((item) => (
-          <Card key={item.id} className="p-4 hover:shadow-md transition-shadow cursor-pointer">
-            <div className="flex gap-3">
-              <div className="w-12 h-12 bg-gray-100 rounded-lg flex-shrink-0 overflow-hidden">
-                <img src={item.image || "/placeholder.svg"} alt={item.title} className="w-full h-full object-cover" />
-              </div>
-              <div className="flex-1 min-w-0">
-                <h3 className="text-sm font-medium text-gray-900 line-clamp-2 mb-1">{item.title}</h3>
-                <p className="text-xs text-gray-500 mb-2">{item.subtitle}</p>
-                <div className="text-sm font-semibold text-blue-600">{item.price}</div>
-              </div>
+    <div className="w-full">
+      <div className="inline-flex flex-col items-start pb-2.5">
+        <Card className="inline-flex flex-col items-start gap-4 bg-white rounded-[10px] border-0 shadow-none w-full">
+          <CardContent className="flex flex-col p-0 w-full">
+            <div className="flex flex-col w-full">
+              <h2 className="mt-[-1px] text-xl font-bold leading-[28.4px] tracking-[-0.2px] text-[#161741]">
+                {title}
+              </h2>
             </div>
-          </Card>
-        ))}
+            <div className="flex flex-col gap-5 mt-4 w-full">
+              <div className="flex flex-col gap-[26px] min-h-[300px]">
+                {items.map((item) => (
+                  <div key={item.id} className="flex w-full items-start gap-[18px]">
+                    <div
+                      className="h-[104px] w-[121px] rounded-[10px] bg-cover bg-center flex-shrink-0"
+                      style={{ backgroundImage: `url(${item.image})` }}
+                    />
+                    <div className="flex flex-1 flex-col justify-between pb-0.5">
+                      <div className="flex flex-col gap-[6.86px] pr-[71.33px]">
+                        {item.category && (
+                          <Badge className="inline-flex h-[21px] items-center gap-[3px] rounded-full bg-[#dde9ff] px-1.5 py-[1.25px] text-[#5791ff] hover:bg-[#dde9ff]">
+                            {item.emoji && (
+                              <span className="text-[10px] font-bold leading-[15px]">{item.emoji}</span>
+                            )}
+                            <span className="text-[11px] font-bold leading-[16.5px]">
+                              {item.category}
+                            </span>
+                          </Badge>
+                        )}
+                        <div className="text-base font-bold leading-[22.7px] text-[#161741]">
+                          {item.title}
+                        </div>
+                      </div>
+                      <div className="inline-flex h-[23px] items-center gap-1 overflow-hidden">
+                        {item.originalPrice && (
+                          <div className="text-sm font-bold leading-[21px] text-[#454567] line-through">
+                            {item.originalPrice}
+                          </div>
+                        )}
+                        <div className="inline-flex items-start gap-px">
+                          {item.discount && (
+                            <div className="text-lg font-bold leading-[27px] text-[#5791ff]">
+                              {item.discount}
+                            </div>
+                          )}
+                          <div className="text-lg font-bold leading-[27px] text-[#161741]">
+                            {item.finalPrice}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <Button className="h-12 w-full items-center justify-center rounded-[10px] bg-[#5791ff] px-[179.25px] py-[11.5px] hover:bg-[#4a7de6]">
+                <span className="text-base font-semibold leading-6 text-white">
+                  {moreText}
+                </span>
+              </Button>
+            </div>
+          </CardContent>
+        </Card>
       </div>
-
-      <Button className={`w-full ${buttonColor} hover:opacity-90 text-white rounded-lg py-3`} variant="default">
-        {buttonText}
-      </Button>
     </div>
   )
 }
