@@ -1,8 +1,51 @@
 import { Header } from "@/components/header"
 import { ZenPointsCard } from "@/components/zen-points-card"
 import { AvatarGrid } from "@/components/avatar-grid"
+import { CardSection } from "@/components/card-section"
 import { AppSection } from "@/components/app-section"
 import { BottomNavigation } from "@/components/bottom-navigation"
+
+const tarotCards = [
+  {
+    id: 1,
+    image: "/image.png",
+    category: "결혼운",
+    emoji: "💍",
+    title: "우리는 결혼까지 갈 수 있을까?",
+    originalPrice: "19,900원",
+    discount: "75%",
+    finalPrice: "4,900원",
+  },
+  {
+    id: 2,
+    image: "/image-2.png",
+    category: "연애운",
+    emoji: "💖",
+    title: "그 사람의 진심은 어디쯤일까?",
+    originalPrice: "21,000원",
+    discount: "77%",
+    finalPrice: "4,900원",
+  },
+  {
+    id: 3,
+    image: "/image-3.png",
+    category: "연애운",
+    emoji: "💖",
+    title: "솔로 탈출, 나에게도 곧 연애가 올까?",
+    originalPrice: "21,000원",
+    discount: "77%",
+    finalPrice: "4,900원",
+  },
+  {
+    id: 4,
+    image: "/image-4.png",
+    category: "재회운",
+    title: "그 사람과, 다시 이어질 수 있을까?",
+    originalPrice: "21,000원",
+    discount: "77%",
+    finalPrice: "4,900원",
+  },
+]
 
 export default function HomePage() {
   return (
@@ -13,6 +56,7 @@ export default function HomePage() {
         <div className="px-4 py-6 space-y-6">
           <ZenPointsCard />
           <AvatarGrid />
+          <CardSection title="타로 베스트" cards={tarotCards} />
           <AppSection
             title="서비스 제공소"
             items={[
