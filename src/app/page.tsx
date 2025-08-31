@@ -1,9 +1,22 @@
-import fs from "node:fs"
-import path from "node:path"
+import { AvatarGrid } from "@/components/avatar-grid"
+import { BottomNavigation } from "@/components/bottom-navigation"
+import { CardSection } from "@/components/card-section"
+import { Carousel } from "@/components/carousel"
+import { Header } from "@/components/header"
+import { ZenPointsCard } from "@/components/zen-points-card"
 
 export default function HomePage() {
-  const html = fs.readFileSync(path.join(process.cwd(), "zedi-crawl/index.html"), "utf8")
-  const bodyMatch = html.match(/<body[^>]*>([\s\S]*)<\/body>/i)
-  const body = bodyMatch ? bodyMatch[1] : html
-  return <div dangerouslySetInnerHTML={{ __html: body }} />
+  return (
+    <>
+      <Header />
+      <main className="space-y-8 pb-20">
+        <Carousel />
+        <CardSection />
+        <AvatarGrid />
+        <ZenPointsCard />
+      </main>
+      <BottomNavigation />
+    </>
+  )
 }
+
