@@ -1,10 +1,9 @@
-import fs from "fs"
-import path from "path"
-
-const htmlFilePath = path.join(process.cwd(), "zedi-crawl", "index.html")
-const rawHtml = fs.readFileSync(htmlFilePath, "utf8")
-const bodyContent = rawHtml.match(/<body[^>]*>([\s\S]*)<\/body>/i)?.[1] ?? ""
+import fs from "node:fs"
+import path from "node:path"
 
 export default function HomePage() {
-  return <div dangerouslySetInnerHTML={{ __html: bodyContent }} />
+  const html = fs.readFileSync(path.join(process.cwd(), "zedi-crawl/index.html"), "utf8")
+  const bodyMatch = html.match(/<body[^>]*>([\s\S]*)<\/body>/i)
+  const body = bodyMatch ? bodyMatch[1] : html
+  return <div dangerouslySetInnerHTML={{ __html: body }} />
 }
