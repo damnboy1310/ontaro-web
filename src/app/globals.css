@@ -1,5 +1,7 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@import "./zendi/68d7b4f6bae4edc4.css";
+@import "./zendi/bc8831281eb208c3.css";
 
 @custom-variant dark (&:is(.dark *));
 
