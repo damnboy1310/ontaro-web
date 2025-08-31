@@ -1,17 +1,10 @@
-import { Header } from "@/components/Header"
-import { HeroSection } from "@/components/HeroSection"
-import { FeaturesSection } from "@/components/FeaturesSection"
-import { Footer } from "@/components/Footer"
+import fs from "fs"
+import path from "path"
+
+const htmlFilePath = path.join(process.cwd(), "zedi-crawl", "index.html")
+const rawHtml = fs.readFileSync(htmlFilePath, "utf8")
+const bodyContent = rawHtml.match(/<body[^>]*>([\s\S]*)<\/body>/i)?.[1] ?? ""
 
 export default function HomePage() {
-  return (
-    <div className="flex min-h-screen flex-col">
-      <Header />
-      <main className="flex-1">
-        <HeroSection />
-        <FeaturesSection />
-      </main>
-      <Footer />
-    </div>
-  )
+  return <div dangerouslySetInnerHTML={{ __html: bodyContent }} />
 }
