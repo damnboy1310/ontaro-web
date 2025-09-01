@@ -11,18 +11,18 @@ interface CategoryItem {
 
 const CategoryGrid: React.FC = () => {
   const categories: CategoryItem[] = [
-    { id: 'best', name: '인기', icon: '/images/zendi/category/best_icon.avif', alt: '인기' },
-    { id: 'new', name: '신규', icon: '/images/zendi/category/new_icon.avif', alt: '신규' },
-    { id: 'reunion', name: '재회운', icon: '/images/zendi/category/reunion_icon.avif', alt: '재회운' },
-    { id: 'wedding', name: '결혼운', icon: '/images/zendi/category/wedding_icon.avif', alt: '결혼운' },
-    { id: 'love', name: '연애운', icon: '/images/zendi/category/love_icon.avif', alt: '연애운' },
-    { id: 'gunghap', name: '궁합운', icon: '/images/zendi/category/gunghap_icon.avif', alt: '궁합운' },
-    { id: 'newyear', name: '신년운', icon: '/images/zendi/category/newyear_icon.avif', alt: '신년운' },
-    { id: 'job', name: '직업운', icon: '/images/zendi/category/job_icon.avif', alt: '직업운' },
-    { id: 'chat', name: '사주 채팅', icon: '/images/zendi/category/chat_icon.png', alt: '사주 채팅' },
-    { id: 'free', name: '무료체험', icon: '/images/zendi/category/free_icon.avif', alt: '무료체험' },
-    { id: 'money', name: '재물운', icon: '/images/zendi/category/money_icon.avif', alt: '재물운' },
-    { id: 'saju', name: '사주풀이', icon: '/images/zendi/category/saju_icon.avif', alt: '사주풀이' }
+    { id: 'best', name: '인기', icon: 'https://placehold.co/62x62/FF6B6B/FFFFFF', alt: '인기' },
+    { id: 'new', name: '신규', icon: 'https://placehold.co/62x62/4ECDC4/FFFFFF', alt: '신규' },
+    { id: 'reunion', name: '재회운', icon: 'https://placehold.co/62x62/45B7D1/FFFFFF', alt: '재회운' },
+    { id: 'wedding', name: '결혼운', icon: 'https://placehold.co/62x62/96CEB4/FFFFFF', alt: '결혼운' },
+    { id: 'love', name: '연애운', icon: 'https://placehold.co/62x62/FFEAA7/FFFFFF', alt: '연애운' },
+    { id: 'gunghap', name: '궁합운', icon: 'https://placehold.co/62x62/DDA0DD/FFFFFF', alt: '궁합운' },
+    { id: 'newyear', name: '신년운', icon: 'https://placehold.co/62x62/98D8C8/FFFFFF', alt: '신년운' },
+    { id: 'job', name: '직업운', icon: 'https://placehold.co/62x62/F7DC6F/FFFFFF', alt: '직업운' },
+    { id: 'chat', name: '사주 채팅', icon: 'https://placehold.co/62x62/BB8FCE/FFFFFF', alt: '사주 채팅' },
+    { id: 'free', name: '무료체험', icon: 'https://placehold.co/62x62/85C1E9/FFFFFF', alt: '무료체험' },
+    { id: 'money', name: '재물운', icon: 'https://placehold.co/62x62/F8C471/FFFFFF', alt: '재물운' },
+    { id: 'saju', name: '사주풀이', icon: 'https://placehold.co/62x62/82E0AA/FFFFFF', alt: '사주풀이' }
   ]
 
   return (

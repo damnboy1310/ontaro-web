@@ -11,13 +11,13 @@ const BannerSlider: React.FC = () => {
     {
       id: 1,
       title: '리뷰이벤트',
-      image: '/images/zendi/banner/리뷰이벤트.jpg',
+      image: 'https://placehold.co/400x400/5791FF/FFFFFF',
       alt: '리뷰이벤트'
     },
     {
       id: 2,
       title: '이프홍보',
-      image: '/images/zendi/banner/이프홍보.jpg',
+      image: 'https://placehold.co/400x400/6660FF/FFFFFF',
       alt: '이프홍보'
     }
   ]
