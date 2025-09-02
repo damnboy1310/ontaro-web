@@ -4,7 +4,7 @@ import React from 'react'
 
 const Header: React.FC = () => {
   return (
-    <div className="w-full h-[60px] max-w-[440px] fixed top-0 left-1/2 transform -translate-x-1/2 flex justify-center items-center z-50 bg-white shadow-md">
+    <div className="w-full h-[60px] max-w-[440px] fixed top-0 left-1/2 transform -translate-x-1/2 flex justify-center items-center z-50" style={{ backgroundColor: 'rgba(255, 255, 255, 0.9)', backdropFilter: 'blur(10px)' }}>
       <div className="w-full h-auto flex flex-row justify-between items-center gap-0 bg-transparent m-0 p-[10px_20px]">
         <div className="w-fit h-auto flex flex-row justify-start items-center gap-[3px] bg-transparent m-0 p-0">
           <span 
