@@ -31,7 +31,8 @@ const CategoryGrid: React.FC = () => {
         {categories.map((category) => (
           <div
             key={category.id}
-            className="flex flex-col items-center gap-[4px] cursor-pointer w-full h-[87px] leading-initial"
+            className="flex flex-col items-center gap-[4px] cursor-pointer w-full h-[87px]"
+            style={{ lineHeight: 'initial' }}
           >
             <div className="relative w-[62px] h-[62px]">
               <img
@@ -40,7 +41,7 @@ const CategoryGrid: React.FC = () => {
                 className="w-full h-full object-cover rounded-[10px] transition-filter duration-[0.2s] ease hover:brightness-110"
               />
             </div>
-            <p className="text-[14px] font-bold text-[#161741] text-center">
+            <p className="text-[14px] text-[#161741] text-center" style={{ fontWeight: 'var(--font-weight-bold)' }}>
               {category.name}
             </p>
           </div>

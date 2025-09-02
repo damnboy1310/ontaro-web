@@ -156,13 +156,11 @@ export default function Home() {
             {/* 탭 전환 */}
             <TabSwitcher />
             {/* 카테고리 그리드 */}
-            <div className="px-[20px] w-full">
-              <CategoryGrid />
-            </div>
+            <CategoryGrid />
             {/* 구분선 */}
-            <hr className="ml-[-20px] border border-solid border-[var(--ZENDi-Background,#f5f5f5)] h-0" style={{ width: 'calc(100% + 40px)' }} />
+            <hr className="w-full border border-solid border-[var(--ZENDi-Background,#f5f5f5)] h-0" />
             {/* 상품 리스트들 */}
-            <div className="px-[20px] w-full space-y-6">
+            <div className="w-full space-y-6">
               <ProductList title="사주 베스트" products={sajuBestProducts} />
               <ProductList title="타로 베스트" products={tarotBestProducts} />
               <ProductList title="AI 헤어 컨설팅 더보기" products={hairConsultingProducts} />
