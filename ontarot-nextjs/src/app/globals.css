@@ -15,6 +15,18 @@
     --z-index-popover: 600;
     --z-index-tooltip: 700;
     --ZENDi-Background: #f5f5f5;
+    
+    /* 폰트 굵기 변수 */
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    
+    /* 색상 변수 */
+    --color-white: #ffffff;
+    --color-gray: #454567;
+    --color-blue: #5791ff;
+    --color-light-blue: #dde9ff;
   }
 
   * {
