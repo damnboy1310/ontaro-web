@@ -7,7 +7,30 @@ const Header: React.FC = () => {
     <div className="w-full h-[60px] max-w-[440px] fixed top-0 left-1/2 transform -translate-x-1/2 flex justify-center items-center z-50 bg-white shadow-md">
       <div className="w-full h-auto flex flex-row justify-between items-center gap-0 bg-transparent m-0 p-[10px_20px]">
         <div className="w-fit h-auto flex flex-row justify-start items-center gap-[3px] bg-transparent m-0 p-0">
-          <span className="text-[21px] font-bold text-[#161741] opacity-100 font-normal leading-[120%] whitespace-pre-line text-start word-break-normal font-family-pretendard-variable letter-spacing-normal word-spacing-normal font-display-swap">
+          <span 
+            className="text-[21px] text-[#161741] leading-[120%] whitespace-pre-line text-start"
+            style={{
+              userSelect: 'none',
+              margin: 0,
+              padding: 0,
+              boxSizing: 'border-box',
+              font: 'inherit',
+              WebkitTapHighlightColor: 'transparent',
+              overscrollBehavior: 'none',
+              fontSize: '21px',
+              fontWeight: 700,
+              color: '#161741',
+              opacity: 1,
+              fontStyle: 'normal',
+              lineHeight: '120%',
+              whiteSpace: 'pre-line',
+              textAlign: 'start',
+              wordBreak: 'normal',
+              fontFamily: 'Pretendard Variable, sans-serif',
+              letterSpacing: 'normal',
+              wordSpacing: 'normal'
+            }}
+          >
             젠디
           </span>
         </div>

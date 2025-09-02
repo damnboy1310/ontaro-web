@@ -1,8 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
 import './globals.css'
-
-const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: '젠디 - AI 사주 타로 운세 상담 서비스',
@@ -35,7 +32,6 @@ export const metadata: Metadata = {
   },
   verification: {
     google: 'hWW1bBJ6LvLKLS6A5afB7t2X8Y2XElwU15YVw8BwaDA',
-    naver: '83e1063d44b678ac619a6d420fe3a235f5c25515',
   },
   icons: {
     icon: '/images/metadata/Favicon.png',
@@ -53,7 +49,7 @@ export default function RootLayout({
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
       </head>
-      <body className={inter.className}>
+      <body>
         <div className="min-h-screen bg-white">
           {children}
         </div>
