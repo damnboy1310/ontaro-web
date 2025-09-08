@@ -22,11 +22,54 @@
     --font-weight-semibold: 600;
     --font-weight-bold: 700;
     
-    /* 색상 변수 */
-    --color-white: #ffffff;
+    /* === 색상 시스템 === */
+    --color-primary: #5791FF;
+    --color-primary-light: #DDE9FF;
+    --color-secondary: #6660FF;
+    --color-text-primary: #161741;
+    --color-text-secondary: #454567;
+    --color-text-muted: #737373;
+    --color-background: #F4F4F4;
+    --color-white: #FFFFFF;
     --color-gray: #454567;
     --color-blue: #5791ff;
     --color-light-blue: #dde9ff;
+    
+    /* === 간격 시스템 === */
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 12px;
+    --spacing-lg: 16px;
+    --spacing-xl: 20px;
+    --spacing-2xl: 24px;
+    --spacing-3xl: 32px;
+    --spacing-4xl: 40px;
+    
+    /* === 폰트 시스템 === */
+    --font-size-xs: 10px;
+    --font-size-sm: 11px;
+    --font-size-base: 14px;
+    --font-size-lg: 16px;
+    --font-size-xl: 18px;
+    --font-size-2xl: 20px;
+    --font-size-3xl: 21px;
+    
+    /* === 둥근 모서리 === */
+    --radius-sm: 6px;
+    --radius-md: 8px;
+    --radius-lg: 10px;
+    --radius-xl: 12px;
+    --radius-2xl: 20px;
+    
+    /* === 그림자 === */
+    --shadow-sm: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0px 4px 20px rgba(0, 0, 0, 0.15);
+    
+    /* === 애니메이션 === */
+    --transition-fast: 0.2s;
+    --transition-normal: 0.3s;
+    --transition-slow: 0.5s;
   }
 
   * {
@@ -99,6 +142,149 @@
   .z-modal { z-index: var(--z-index-modal); }
   .z-popover { z-index: var(--z-index-popover); }
   .z-tooltip { z-index: var(--z-index-tooltip); }
+  
+  /* === 공통 컴포넌트 클래스 === */
+  
+  /* 버튼 시스템 */
+  .btn-primary {
+    @apply bg-[var(--color-primary)] text-[var(--color-white)] font-[var(--font-weight-bold)] px-[var(--spacing-lg)] py-[var(--spacing-md)] rounded-[var(--radius-lg)] transition-all duration-[var(--transition-fast)];
+  }
+  
+  .btn-secondary {
+    @apply bg-[var(--color-primary-light)] text-[var(--color-primary)] font-[var(--font-weight-semibold)] px-[var(--spacing-lg)] py-[var(--spacing-md)] rounded-[var(--radius-lg)] transition-all duration-[var(--transition-fast)];
+  }
+  
+  /* 카드 시스템 */
+  .card {
+    @apply bg-[var(--color-white)] rounded-[var(--radius-lg)] shadow-[var(--shadow-md)] p-[var(--spacing-xl)];
+  }
+  
+  /* 텍스트 시스템 */
+  .text-heading {
+    @apply text-[var(--color-text-primary)] font-[var(--font-weight-bold)];
+  }
+  
+  .text-body {
+    @apply text-[var(--color-text-secondary)] font-[var(--font-weight-normal)];
+  }
+  
+  .text-muted {
+    @apply text-[var(--color-text-muted)] font-[var(--font-weight-normal)];
+  }
+
+  /* === 페이지 레이아웃 컴포넌트 === */
+  
+  /* 메인 컨테이너 */
+  .main-container {
+    width: 100%;
+    max-width: 440px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    box-shadow: -10px 0 5px -5px rgba(0,0,0,0.01), 10px 0 5px -5px rgba(0,0,0,0.01);
+    background-color: white;
+    min-height: 100vh;
+    position: relative;
+  }
+  
+  /* wrap 컨테이너 */
+  .wrap-container {
+    width: 100%;
+    min-height: calc(var(--vh, 1vh) * 100);
+    position: relative;
+  }
+  
+  /* 메인 컨텐츠 컨테이너 */
+  .main-content-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: white;
+  }
+  
+  /* 스크롤 컨텐츠 영역 */
+  .scroll-content-area {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: calc(var(--vh, 1vh) * 100 - 70px);
+    padding-bottom: 90px;
+  }
+  
+  /* 컨텐츠 그룹 */
+  .content-group {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 25px;
+    background-color: transparent;
+    margin: 0;
+    padding: 0 20px 0;
+  }
+  
+  /* 상품 리스트 컨테이너 */
+  .product-list-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  
+  /* 구분선 */
+  .divider-line {
+    width: 100%;
+    border: 1px solid var(--ZENDi-Background, #f5f5f5);
+    height: 0;
+  }
+}
+
+@layer utilities {
+  /* === 반응형 디자인 클래스 === */
+  
+  /* 모바일 우선 디자인 */
+  .container-mobile {
+    @apply w-full max-w-[440px] mx-auto px-[var(--spacing-xl)];
+  }
+  
+  /* 그리드 시스템 */
+  .grid-category {
+    @apply grid grid-cols-4 gap-[var(--spacing-md)_var(--spacing-sm)];
+  }
+  
+  /* 간격 유틸리티 */
+  .gap-xs { gap: var(--spacing-xs); }
+  .gap-sm { gap: var(--spacing-sm); }
+  .gap-md { gap: var(--spacing-md); }
+  .gap-lg { gap: var(--spacing-lg); }
+  .gap-xl { gap: var(--spacing-xl); }
+  .gap-2xl { gap: var(--spacing-2xl); }
+  .gap-3xl { gap: var(--spacing-3xl); }
+  .gap-4xl { gap: var(--spacing-4xl); }
+  
+  /* 패딩 유틸리티 */
+  .p-xs { padding: var(--spacing-xs); }
+  .p-sm { padding: var(--spacing-sm); }
+  .p-md { padding: var(--spacing-md); }
+  .p-lg { padding: var(--spacing-lg); }
+  .p-xl { padding: var(--spacing-xl); }
+  .p-2xl { padding: var(--spacing-2xl); }
+  .p-3xl { padding: var(--spacing-3xl); }
+  .p-4xl { padding: var(--spacing-4xl); }
+  
+  /* 마진 유틸리티 */
+  .m-xs { margin: var(--spacing-xs); }
+  .m-sm { margin: var(--spacing-sm); }
+  .m-md { margin: var(--spacing-md); }
+  .m-lg { margin: var(--spacing-lg); }
+  .m-xl { margin: var(--spacing-xl); }
+  .m-2xl { margin: var(--spacing-2xl); }
+  .m-3xl { margin: var(--spacing-3xl); }
+  .m-4xl { margin: var(--spacing-4xl); }
 }
 
 /* Swiper 스타일 */

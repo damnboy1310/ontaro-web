@@ -26,22 +26,21 @@ const CategoryGrid: React.FC = () => {
   ]
 
   return (
-    <div className="w-full overflow-hidden">
-      <div className="grid grid-cols-4 gap-[12px_10px] w-full opacity-100 transition-all duration-[0.3s] ease-in-out h-[300px]">
+    <div className="container-mobile overflow-hidden">
+      <div className="grid-category w-full opacity-100 transition-all duration-[var(--transition-normal)] ease-in-out h-[300px]">
         {categories.map((category) => (
           <div
             key={category.id}
-            className="flex flex-col items-center gap-[4px] cursor-pointer w-full h-[87px]"
-            style={{ lineHeight: 'initial' }}
+            className="flex flex-col items-center gap-[var(--spacing-sm)] cursor-pointer w-full h-[87px] group"
           >
             <div className="relative w-[62px] h-[62px]">
               <img
                 src={category.icon}
                 alt={category.alt}
-                className="w-full h-full object-cover rounded-[10px] transition-filter duration-[0.2s] ease hover:brightness-110"
+                className="w-full h-full object-cover rounded-[var(--radius-lg)] transition-all duration-[var(--transition-fast)] ease group-hover:brightness-110 group-hover:scale-105"
               />
             </div>
-            <p className="text-[14px] text-[#161741] text-center" style={{ fontWeight: 'var(--font-weight-bold)' }}>
+            <p className="text-[14px] text-[var(--color-text-primary)] text-center font-[var(--font-weight-bold)] group-hover:text-[var(--color-primary)] transition-colors duration-[var(--transition-fast)]">
               {category.name}
             </p>
           </div>

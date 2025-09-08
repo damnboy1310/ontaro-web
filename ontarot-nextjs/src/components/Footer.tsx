@@ -5,9 +5,9 @@ import { MessageCircle, Instagram } from 'lucide-react'
 
 const Footer: React.FC = () => {
   return (
-    <div className="static bottom-0 w-full bg-[#F4F4F4] flex items-center">
-      <div className="w-full px-[20px] py-[20px] flex flex-col items-center gap-[40px]">
-        <div className="w-full flex flex-col gap-[32px]">
+    <div className="static bottom-0 w-full bg-[var(--color-background)] flex items-center">
+      <div className="container-mobile py-[var(--spacing-xl)] flex flex-col items-center gap-[var(--spacing-4xl)]">
+        <div className="w-full flex flex-col gap-[var(--spacing-3xl)]">
           <div className="w-full flex justify-between items-center">
             <div className="flex justify-center items-center">
               <svg fill="none" height="24" viewBox="0 0 131 37" width="47" xmlns="http://www.w3.org/2000/svg">
@@ -18,33 +18,33 @@ const Footer: React.FC = () => {
                 <path d="M123.674 10.9471H130.639V36.5H123.674V10.9471ZM127.157 7.60588C126.466 7.60588 125.831 7.44902 125.251 7.13529C124.67 6.80588 124.208 6.37451 123.863 5.84118C123.517 5.29216 123.345 4.70392 123.345 4.07647C123.345 3.43333 123.517 2.83726 123.863 2.28824C124.208 1.73922 124.67 1.30784 125.251 0.994118C125.831 0.664706 126.466 0.5 127.157 0.5C127.831 0.5 128.459 0.664706 129.039 0.994118C129.619 1.30784 130.074 1.73922 130.404 2.28824C130.749 2.83726 130.921 3.43333 130.921 4.07647C130.921 4.70392 130.749 5.29216 130.404 5.84118C130.074 6.37451 129.619 6.80588 129.039 7.13529C128.459 7.44902 127.831 7.60588 127.157 7.60588Z" fill="#0D1322" />
               </svg>
             </div>
-            <div className="flex gap-[12px]">
-              <div className="w-[36px] h-[36px] bg-[#E0E0E0] rounded-full flex justify-center items-center cursor-pointer text-[#1F1F1F]">
+            <div className="flex gap-[var(--spacing-md)]">
+              <div className="w-[36px] h-[36px] bg-[#E0E0E0] rounded-full flex justify-center items-center cursor-pointer text-[var(--color-text-primary)] hover:bg-[#D0D0D0] transition-colors duration-[var(--transition-fast)]">
                 <MessageCircle size={18} />
               </div>
-              <div className="w-[36px] h-[36px] bg-[#E0E0E0] rounded-full flex justify-center items-center cursor-pointer text-[#1F1F1F]">
+              <div className="w-[36px] h-[36px] bg-[#E0E0E0] rounded-full flex justify-center items-center cursor-pointer text-[var(--color-text-primary)] hover:bg-[#D0D0D0] transition-colors duration-[var(--transition-fast)]">
                 <Instagram size={18} />
               </div>
             </div>
           </div>
-          <div className="text-[#737373] flex flex-col gap-[6px]">
-            <div className="font-pretendard text-[14px] font-normal leading-[125%]">(주)어보브테크</div>
-            <div className="font-pretendard text-[14px] font-normal leading-[125%]">사업자 등록번호 : 865-88-02913</div>
-            <div className="font-pretendard text-[14px] font-normal leading-[125%]">대표자 : 최주원, 정성원</div>
-            <div className="font-pretendard text-[14px] font-normal leading-[125%]">이메일 : biz@abovetech.io</div>
-            <div className="font-pretendard text-[14px] font-normal leading-[125%]">연락처 : 010-9898-6913</div>
-            <div className="font-pretendard text-[14px] font-normal leading-[125%]">통신판매업 신고 번호 : 제2024‒서울마포‒1604호</div>
-            <div className="font-pretendard text-[14px] font-normal leading-[125%]">주소 : 04034 서울시 마포구 양화로 81 H스퀘어</div>
+          <div className="text-muted flex flex-col gap-[var(--spacing-sm)]">
+            <div className="font-pretendard text-[var(--font-size-base)] font-normal leading-[125%]">(주)어보브테크</div>
+            <div className="font-pretendard text-[var(--font-size-base)] font-normal leading-[125%]">사업자 등록번호 : 865-88-02913</div>
+            <div className="font-pretendard text-[var(--font-size-base)] font-normal leading-[125%]">대표자 : 최주원, 정성원</div>
+            <div className="font-pretendard text-[var(--font-size-base)] font-normal leading-[125%]">이메일 : biz@abovetech.io</div>
+            <div className="font-pretendard text-[var(--font-size-base)] font-normal leading-[125%]">연락처 : 010-9898-6913</div>
+            <div className="font-pretendard text-[var(--font-size-base)] font-normal leading-[125%]">통신판매업 신고 번호 : 제2024‒서울마포‒1604호</div>
+            <div className="font-pretendard text-[var(--font-size-base)] font-normal leading-[125%]">주소 : 04034 서울시 마포구 양화로 81 H스퀘어</div>
           </div>
         </div>
-        <div className="w-full h-fit flex justify-between items-center text-[#F4F4F4]">
-          <div className="h-fit flex whitespace-nowrap items-end justify-center text-right font-pretendard text-[14px] font-normal leading-[105%] gap-[4px] text-[#1F1F1F]">
+        <div className="w-full h-fit flex justify-between items-center text-[var(--color-background)]">
+          <div className="h-fit flex whitespace-nowrap items-end justify-center text-right font-pretendard text-[var(--font-size-base)] font-normal leading-[105%] gap-[var(--spacing-xs)] text-[var(--color-text-primary)]">
             <div className="relative w-[18px] h-[18px]">
               <div className="w-[18px] h-[18px]"></div>
             </div>
             2023 AboveTech Inc.
           </div>
-          <div className="flex whitespace-nowrap items-end justify-center gap-[8px] font-pretendard text-[14px] font-normal leading-[105%] cursor-pointer text-[#1F1F1F]">
+          <div className="flex whitespace-nowrap items-end justify-center gap-[var(--spacing-sm)] font-pretendard text-[var(--font-size-base)] font-normal leading-[105%] cursor-pointer text-[var(--color-text-primary)] hover:text-[var(--color-primary)] transition-colors duration-[var(--transition-fast)]">
             Privacy & Terms of Use
           </div>
         </div>

@@ -23,7 +23,7 @@ const BannerSlider: React.FC = () => {
   ]
 
   return (
-    <div className="w-full h-auto flex flex-col justify-start items-start gap-[25px] bg-transparent m-0 px-[20px] pt-0">
+    <div className="container-mobile flex flex-col justify-start items-start gap-[25px] pt-0">
       <div className="overflow-hidden" style={{ margin: '0 -20px', width: 'calc(100% + 40px)' }}>
         <Swiper
           modules={[Pagination, Autoplay]}
@@ -36,7 +36,7 @@ const BannerSlider: React.FC = () => {
         >
           {banners.map((banner) => (
             <SwiperSlide key={banner.id}>
-              <div className="relative w-full aspect-square rounded-[10px] overflow-hidden shadow-[0px_2px_10px_rgba(0,0,0,0.1)] cursor-pointer transition-transform duration-[0.2s] ease hover:scale-[1.02]">
+              <div className="relative w-full aspect-square rounded-[var(--radius-lg)] overflow-hidden shadow-[var(--shadow-md)] cursor-pointer transition-transform duration-[var(--transition-fast)] ease hover:scale-[1.02]">
                 <img
                   src={banner.image}
                   alt={banner.alt}

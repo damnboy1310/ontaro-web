@@ -6,11 +6,11 @@ const TabSwitcher: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'saju' | 'tarot'>('saju')
 
   return (
-    <div className="w-full h-[52px] mb-[-9px]">
-      <div className="relative flex w-full h-full bg-[var(--color-light-blue)] rounded-[12px] p-[2px]">
+    <div className="container-mobile w-full h-[52px] mb-[-9px]">
+      <div className="relative flex w-full h-full bg-[var(--color-primary-light)] rounded-[var(--radius-xl)] p-[2px]">
         {/* 배경 슬라이더 */}
         <div
-          className={`absolute bg-[var(--color-blue)] rounded-[10px] top-[2px] transition-all duration-[0.3s] ease-[cubic-bezier(0.4,0,0.2,1)] z-[0] ${
+          className={`absolute bg-[var(--color-primary)] rounded-[var(--radius-lg)] top-[2px] transition-all duration-[var(--transition-normal)] ease-[cubic-bezier(0.4,0,0.2,1)] z-[0] ${
             activeTab === 'saju' ? 'left-[2px]' : 'left-[calc(50%+2px)]'
           }`}
           style={{
@@ -21,10 +21,10 @@ const TabSwitcher: React.FC = () => {
         
         {/* 사주 탭 */}
         <button
-          className={`flex-1 flex justify-center items-center text-[16px] z-[10] transition-all duration-[0.3s] ease-[cubic-bezier(0.4,0,0.2,1)] relative ${
+          className={`flex-1 flex justify-center items-center text-[var(--font-size-lg)] z-[10] transition-all duration-[var(--transition-normal)] ease-[cubic-bezier(0.4,0,0.2,1)] relative ${
             activeTab === 'saju' 
-              ? 'text-[var(--color-white)]' 
-              : 'text-[var(--color-gray)]'
+              ? 'text-white' 
+              : 'text-[var(--color-text-secondary)]'
           }`}
           style={{
             fontWeight: activeTab === 'saju' ? 'var(--font-weight-bold)' : 'var(--font-weight-normal)'
@@ -36,10 +36,10 @@ const TabSwitcher: React.FC = () => {
         
         {/* 타로 탭 */}
         <button
-          className={`flex-1 flex justify-center items-center text-[16px] z-[10] transition-all duration-[0.3s] ease-[cubic-bezier(0.4,0,0.2,1)] relative ${
+          className={`flex-1 flex justify-center items-center text-[var(--font-size-lg)] z-[10] transition-all duration-[var(--transition-normal)] ease-[cubic-bezier(0.4,0,0.2,1)] relative ${
             activeTab === 'tarot' 
-              ? 'text-[var(--color-white)]' 
-              : 'text-[var(--color-gray)]'
+              ? 'text-white' 
+              : 'text-[var(--color-text-secondary)]'
           }`}
           style={{
             fontWeight: activeTab === 'tarot' ? 'var(--font-weight-bold)' : 'var(--font-weight-normal)'

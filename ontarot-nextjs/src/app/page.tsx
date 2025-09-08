@@ -147,28 +147,38 @@ export default function Home() {
   ]
   return (
     <>
-      <Header />
-      <div className="w-full max-w-[440px] mx-auto flex flex-col shadow-[-10px_0_5px_-5px_rgba(0,0,0,0.01),10px_0_5px_-5px_rgba(0,0,0,0.01)] bg-white min-h-screen">
-        <div className="flex-1 pt-[60px] pb-[90px]">
-          <div className="w-full h-auto flex flex-col justify-start items-start gap-[25px] bg-transparent m-0 p-[0_20px_0]">
-            {/* 배너 슬라이더 */}
-            <BannerSlider />
-            {/* 탭 전환 */}
-            <TabSwitcher />
-            {/* 카테고리 그리드 */}
-            <CategoryGrid />
-            {/* 구분선 */}
-            <hr className="w-full border border-solid border-[var(--ZENDi-Background,#f5f5f5)] h-0" />
-            {/* 상품 리스트들 */}
-            <div className="w-full space-y-6">
-              <ProductList title="사주 베스트" products={sajuBestProducts} />
-              <ProductList title="타로 베스트" products={tarotBestProducts} />
-              <ProductList title="AI 헤어 컨설팅 더보기" products={hairConsultingProducts} />
+      <div className="main-container">
+        {/* wrap 컨테이너 */}
+        <div className="wrap-container">
+          {/* css-1pru9mk - 메인 컨텐츠 컨테이너 */}
+          <div className="main-content-container">
+            {/* css-1sp56x8 - 스크롤 컨텐츠 영역 (padding-bottom: 90px) */}
+            <div className="scroll-content-area">
+              {/* css-12e2oxn - 헤더 (sticky top: 0) */}
+              <Header />
+              {/* css-bwlul6 - 메인 컨텐츠 */}
+              <div className="content-group">
+                {/* 배너 슬라이더 */}
+                <BannerSlider />
+                {/* 탭 전환 */}
+                <TabSwitcher />
+                {/* 카테고리 그리드 */}
+                <CategoryGrid />
+                {/* 구분선 */}
+                <hr className="divider-line" />
+                {/* 상품 리스트들 */}
+                <div className="product-list-container">
+                  <ProductList title="사주 베스트" products={sajuBestProducts} />
+                  <ProductList title="타로 베스트" products={tarotBestProducts} />
+                  <ProductList title="AI 헤어 컨설팅 더보기" products={hairConsultingProducts} />
+                </div>
+              </div>
             </div>
           </div>
+          {/* z-sticky css-1wo71yy - 하단 네비게이션 (wrap 바로 아래, css-1pru9mk와 동등한 레벨) */}
+          <BottomNavigation />
         </div>
-        {/* 하단 네비게이션 - 상품 리스트 바로 아래에 배치 */}
-        <BottomNavigation />
+        {/* css-1geap17 - Footer (position: static) - wrap 밖으로 이동 */}
         <Footer />
       </div>
     </>
